@@ -22,8 +22,8 @@ export const getBasketTotal = (basket) =>
             let newBasket = [...state.basket];
             if(index>=0){
                 newBasket.splice(index,1);
-                console.log(state)
-                console.log(action.id)
+                // console.log(state)
+                // console.log(action.id)
 
             }else{
                 console.warn(`Cant remove product (id:${action.id}) as it's not in basket!`)
@@ -31,6 +31,11 @@ export const getBasketTotal = (basket) =>
             return{
                 ...state,
                 basket:newBasket
+            }
+        case "SET_USER":
+            return{
+                ...state,
+                user:action.user
             }
            
         default:

@@ -36,4 +36,18 @@
     background: linear-gradient(to bottom,#f7dfa5,#f0c14b);;
     color: #111;
     cursor: pointer;
+    width: 40%;
+    padding: 5px;
+    border-radius: 2px;
+}
+.product button:hover{
+    background:#f0c14b
+}
+
+@media screen and (max-width: 578px) {
+
+    .product_info p{
+        font-size: small;
+    }
+    
 }

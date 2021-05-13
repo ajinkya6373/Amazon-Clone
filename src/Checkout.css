@@ -9,8 +9,24 @@
     padding: 10px;
     border-bottom: 1px solid lightgray;
 }
+
 .checkout_ad{
     width: 100%;
     margin-bottom: 10px;
+    
+}
+
+@media screen and (max-width: 701px) {
+    .checkout{
+        flex-wrap: wrap;
+    }
+    
+}
+@media screen and (max-width: 411px) {
+    .checkout_ad{
+        width: 100%;
+        
+        
+    }
     
 }

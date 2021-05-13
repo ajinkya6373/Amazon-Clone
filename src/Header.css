@@ -1,21 +1,34 @@
 .header{
-    height: 60px;
+    /* height: 60px; */
     display: flex;
     background-color: #131921;
     position: sticky;
     top:0;
     z-index: 100;
-
-
+    width: 100%;
 }
+
 .header_logo{
-    width: 100px;
+    position: relative;
+    width:100px;
     object-fit: contain;
-    margin: 0 20px;
-    margin-top: 8px;
+    margin: 0 1px;
+    margin-top: 10px;
+ 
+}
+.logoDiv{
+    /* border: 2px solid blue; */
+    width: 9%;
+    flex: 0.1;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.header_logo:hover{
+    border: 1px solid white;
 }
 .header_search{
-    /* margin-top: 15px; */
+    margin-left: 15px;
     display: flex;
     flex: 1;
     align-items: center;
@@ -40,24 +53,21 @@
     color: white;
  
 }
+
 .header_option{
     display: flex;
     flex-direction: column;
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 12px;
-   
-
-
 }
+
  a{
     text-decoration: none;
     color: white;
 }
 .header__optionOne{
     font-size: 10px;
-  
-
 }
 .header__optionTwo{
    
@@ -65,14 +75,67 @@
     font-weight: 800;
 }
 .header_optionBasket{
-    margin-top: 14px;
+    margin-top: 4px;
     display: flex;
+    flex-direction: column-reverse;
     color: white;
     align-items: center;
 
 
 }
+.header_optionBasket:hover{
+    border: 1px solid white;
+}
 .header_basketCount{
     margin-left: 10px;
     margin-right: 10px;
+}
+
+
+@media screen and (max-width: 807px) {
+    .header_logo{
+        width:60px;
+    }
+    .header_searchInput{
+        height: 7px;
+        padding: 7px;
+        border: none;
+        width: 100%;
+    }
+    .header_searchIcon{
+          padding: 2px;
+          height: 19px !important;
+          background-color: #cd9042;
+    
+    }
+    .logoDiv{
+        /* border: 2px solid blue; */
+        width: 9%;
+        flex: 0.1;
+        padding-left: 0px;
+        padding-right: 10px;
+    }
+    .header_search{
+        margin-left: 22px;
+        display: flex;
+        align-items: center;
+        border-radius: 24px;
+        width: 30px;
+    
+    }
+    .header_option{
+        margin-left: 6px;
+        margin-right: 6px;
+   
+    }
+    .header_option span{
+      font-size: 8px;
+     
+    }
+    .header_optionBasket{
+        flex-wrap: wrap-reverse;
+    }
+
+    
+
 }

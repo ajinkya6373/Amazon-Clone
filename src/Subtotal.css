@@ -24,7 +24,21 @@
     border: 1px solid #a88734 #9c7e31 #846a29;
     margin-top: 10px;
     margin-top: 10px;
-    background: linear-gradient(to bottom,#f7dfa5,#f0c14b);;
+    background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
     color: #111;
     cursor: pointer;
+}
+.subtotal button:hover{
+    background:#f0c14b
+}
+
+
+@media screen and (max-width: 701px) {
+    .subtotal{
+        width: 252px;
+       
+    }
+    .payment_details{
+        margin-top: 15px;
+    }
 }
