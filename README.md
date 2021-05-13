@@ -1,4 +1,4 @@
-Amazon clone 
+Amazon clone 🛒
 Technology that I have learned and apply are: React, Redux, React Contax API, firebase, Material Ui, stripe js,
 Features:  Firebase Authentication used to create account and login
             For payment gateway (only front end) I have used stripe js
