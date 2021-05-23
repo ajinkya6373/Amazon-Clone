@@ -11,6 +11,7 @@ import { useStateValue } from './StateProvider';
 import Payment from './Payment';
 import { loadStripe } from "@stripe/stripe-js"
 import { Elements } from "@stripe/react-stripe-js"
+import Favorite from './Favorite';
 
 
 
@@ -28,7 +29,6 @@ function App() {
         dispatch({
           type: "SET_USER",
           user: authUser
-
         })
       } else {
         //the user logged out
@@ -43,25 +43,32 @@ function App() {
   return (
     <Router>
       <div className="app">
-
         <Switch>
-
+          
           <Route exact path="/">
             <Header />
             <Home />
           </Route>
+
           <Route path="/checkout">
             <Header />
             <Checkout />
           </Route>
+
           <Route path="/login">
             <Login />
           </Route>
+
           <Route path="/payment">
             <Header />
             <Elements stripe={promise}>
               <Payment />
             </Elements>
+          </Route>
+
+          <Route path="/Favorite">
+              <Header />
+              <Favorite/>
           </Route>
 
         </Switch>
@@ -74,3 +81,4 @@ function App() {
 
 
 export default App;
+
