@@ -52,6 +52,17 @@
 
 
 }
+.favItems{
+    position: absolute;
+    right: 32px;
+    width: 10px;
+    font-size: 20px;
+    transform: scale(1.8);
+    top:5%;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+}
 
 .home_image{
     width: 100%;
