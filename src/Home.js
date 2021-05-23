@@ -1,50 +1,58 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import './Home.css'
 import Product from "./Product"
-import { Carousel } from 'react-responsive-carousel';
-import { FaAngleLeft, FaAngleRight} from "react-icons/fa";
+import { Link } from "react-router-dom"
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+// import FavoriteIcon from '@material-ui/icons/Favorite';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 
 
 
 function Home() {
-     const imageData =[
-         {
-             image:'https://images-eu.ssl-images-amazon.com/images/G/31/AmazonVideo/2021/X-site/SingleTitle/Without_remorse/launch/1500x600_Hero-Tall_JPN._CB669547265_.jpg'
-         },
-         {
-             image:'https://images-eu.ssl-images-amazon.com/images/G/31/img21/HPC/GW/Grocery_1500x600._CB669573043_.jpg'
-         },
-         {
-             image:'https://images-eu.ssl-images-amazon.com/images/G/31/AmazonVideo/2021/X-site/SingleTitle/Without_remorse/launch/1500x600_Hero-Tall_JPN._CB670768292_.jpg'
-         }
-     ]
-     const length =imageData.length;
-    const [current ,setCurrent ]  = useState(0)
+    const imageData = [
+        {
+            image: 'https://images-eu.ssl-images-amazon.com/images/G/31/AmazonVideo/2021/X-site/SingleTitle/Without_remorse/launch/1500x600_Hero-Tall_JPN._CB669547265_.jpg'
+        },
+        {
+            image: 'https://images-eu.ssl-images-amazon.com/images/G/31/img21/HPC/GW/Grocery_1500x600._CB669573043_.jpg'
+        },
+        {
+            image: 'https://images-eu.ssl-images-amazon.com/images/G/31/img17/Home/LA/Diwali2019/Rishab/Auto_Biss/BISS_GW_Hero/Feb_21/PC_Hero_1500x600-._CB658822030_.jpg'
+        },
+        {
+            image: 'https://images-eu.ssl-images-amazon.com/images/G/31/AmazonVideo/2021/X-site/SingleTitle/Without_remorse/launch/1500x600_Hero-Tall_JPN._CB670768292_.jpg'
+        }
+    ]
+    const length = imageData.length;
+    const [current, setCurrent] = useState(0)
     const nextSlide = () => {
-        setCurrent(current=== length-1 ? 0 :current+1)
+        setCurrent(current === length - 1 ? 0 : current + 1)
     }
-    const prevSlide = () =>{
-        setCurrent(current===0 ? length-1: current-1)
+    const prevSlide = () => {
+        setCurrent(current === 0 ? length - 1 : current - 1)
     }
-    console.log(current);
+    // console.log(current);
 
-    if(!Array.isArray(imageData) || imageData.length<=0){
+    if (!Array.isArray(imageData) || imageData.length <= 0) {
         return null;
     }
     return (
         <div className="home">
             <div className="home_container">
-            < FaAngleLeft className ="left-arrow" onClick={prevSlide}/>
-            <FaAngleRight className ="right-arrow" onClick={nextSlide} />
-                {imageData.map((slider,index) =>{
-                    return(
-                        <div className={index===current ? 'slide active':'slide'} key={index}>
-                        {index=== current && (  <img className="home_image"
-                            src={slider.image} alt="home image " />)}
+                <Link to="/Favorite">
+                    <FavoriteBorderIcon className="favItems" />
+                </Link>
+                < FaAngleLeft className="left-arrow" onClick={prevSlide} />
+                <FaAngleRight className="right-arrow" onClick={nextSlide} />
+                {imageData.map((slider, index) => {
+                    return (
+                        <div className={index === current ? 'slide active' : 'slide'} key={index}>
+                            {index === current && (<img className="home_image"
+                                src={slider.image} alt="home image " />)}
                         </div>
                     )
                 })}
-              
+
             </div>
 
             <div className="home_row">
@@ -67,5 +75,6 @@ function Home() {
 }
 
 export default Home
+
 
 
