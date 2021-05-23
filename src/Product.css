@@ -43,6 +43,12 @@
 .product button:hover{
     background:#f0c14b
 }
+.favItem{
+    margin-left: 90%;
+    cursor: pointer;
+
+}
+
 
 @media screen and (max-width: 578px) {
 
@@ -50,4 +56,3 @@
         font-size: small;
     }
     
-}
